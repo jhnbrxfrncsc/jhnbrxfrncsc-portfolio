@@ -20,9 +20,9 @@
         />
     </head>
     <body>
+        
         <!-- Main Container -->
         <div class="main-container">
-
             <!-- Aside Navbar -->
             <aside class="navbar">
                 <figure class="logo">
@@ -32,8 +32,13 @@
                     >
                     <h3>JonB</h3>
                 </figure>
-                <ul class="nav-links">
-                    <li class="nav-link">
+                <div class="nav-toggler">
+                    <span>
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </div>
+                <ul class="nav-links ">
+                    <li class="nav-link nav-link-active">
                         <a href="#home">
                             <i class="fas fa-home"></i>
                             Home
@@ -69,14 +74,18 @@
                     <a href="https://www.github.com/jhnbrxfrncsc" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
+                    <a href="https://gitlab.com/jhnbrxfrncsc" target="_blank">
+                        <i class="fab fa-gitlab"></i>
+                    </a>
                 </footer>
             </aside>
 
             <!-- Main Content -->
             <div class="main-content">
-
+                <div id="progressbar"></div>
+                <div id="scroll-path"></div>
                 <!-- Home Section -->
-                <section id="home" class="home section">
+                <section id="home" class="home section back-section">
                     <div class="container">
                         <div class="break-top"></div>
                         <div class="break-top1"></div>
@@ -129,7 +138,7 @@
                 <!-- End of Home Section -->
 
                 <!-- About Section -->
-                <section id="about" class="about section">
+                <section id="about" class="about section hidden">
                     <div class="container">
                         <header class="about-header">
                             <h1 data-text="ABOUT ME">
@@ -189,7 +198,7 @@
                 <!-- End of About Section -->
 
                 <!-- Projects Section -->
-                <article id="projects" class="projects section">
+                <article id="projects" class="projects section hidden">
                     <div class="container">
                         <header class="projects-header">
                             <h1 data-text="PROJECTS"><span>My</span> Projects</h1>
@@ -281,7 +290,7 @@
                 <!-- End of Projects Section -->
 
                 <!-- Contact Section -->
-                <article id="contact" class="contact section">
+                <article id="contact" class="contact section hidden">
                     <div class="container">
                         <header class="contact-header">
                             <h1 data-text="CONTACT ME">Contact <span>Me</span></h1>
@@ -391,6 +400,8 @@
 
         </div>
         <!-- End of Main Container -->
+
+        <!-- JS -->
         <script src="assets/js/main.js"></script>
     </body>
 </html>

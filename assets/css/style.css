@@ -164,6 +164,21 @@
         box-shadow: 0px 0px 10px 6px var(--primary);
     }
 } 
+
+@keyframes slideSection {
+    0% {
+        right: -100%;
+    }
+
+    80% {
+        right: 20%;
+    }
+
+    100% {
+        right: 0%;
+    }
+}
+
 /* ============================ */
 /* ============================ */
 /* ============================ */
@@ -171,10 +186,6 @@
 /* ============================ */
 /* ============================ */
 /* ============================ */
-/* about
-    width: 50%;
-    margin: 1rem auto;
-*/
 
 /* ============================ */
 /* =======GENERAL STYLES======= */
@@ -283,6 +294,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: var(--container);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -304,7 +319,8 @@ html {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 12;
+    transition: 0.4s ease-in-out;
 }
     /* ============================ */
     /* ============================ */
@@ -333,22 +349,54 @@ html {
         letter-spacing: .25rem;
     }
     /* ============================ */
-    /* ============================ */
-    /* ============================ */
     /* ==========LOGO END========== */
     /* ============================ */
-    /* ============================ */
-    /* ============================*/
-
-
 
     /* ============================ */
+    /* =========NAV TOGGLER======== */
     /* ============================ */
+    .nav-toggler {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        height: 40px;
+        width: 40px;
+        top: 1.75rem;
+        left: 1.75rem;
+        background-color: var(--container);
+        border: 1px solid var(--primary);
+        border-radius: 5px;
+        z-index: 15;
+        cursor: pointer;
+        transition: all 5s ease-in-out;
+    }
+    
+    .nav-toggled {
+        left: unset;
+        right: 1.75rem;
+        background-color: var(--dark);
+        transition: all 5s ease-in-out;
+    }
+
+    .nav-toggler:hover {
+        transition: 0.4s ease-in-out;
+        box-shadow: 0 0 10px var(--primary), 
+                0 0 20px var(--primary);
+    }
+
+    .nav-toggler span i{
+        color: var(--primary);
+        font-size: 1.25em;
+    }
+
+    /* ============================ */
+    /* =======NAV TOGGLER END====== */
+    /* ============================ */
+
     /* ============================ */
     /* =========NAV-LINKS========== */
     /* ============================ */
-    /* ============================ */
-    /* ============================*/
     .nav-links {
         margin: 80px 0;
         list-style: none;
@@ -366,6 +414,18 @@ html {
         padding: 5px 0;
         margin: 16px 0;
         border-bottom: 1.5px solid var(--container);
+    }
+
+    .nav-link-active {
+        font-weight: 600;
+        color: var(--primary);
+        transition: .35s all ease-in-out;
+        text-shadow: 0 0 10px var(--primary), 
+                    0 0 40px var(--primary), 
+                    0 0 80px var(--primary);
+    }
+    .nav-link-active a {
+        color: var(--primary);
     }
     
     .nav-link a:hover {
@@ -386,21 +446,12 @@ html {
     }
 
     /* ============================ */
-    /* ============================ */
-    /* ============================ */
     /* =======NAV-LINKS END======== */
     /* ============================ */
-    /* ============================ */
-    /* ============================*/
     
 
-
-    /* ============================ */
-    /* ============================ */
     /* ============================ */
     /* ===========FOOTER=========== */
-    /* ============================ */
-    /* ============================ */
     /* ============================*/
     footer {
         height: 2rem;
@@ -422,11 +473,22 @@ html {
                     0 0 80px var(--primary);
     }
     /* ============================ */
-    /* ============================ */
-    /* ============================ */
     /* =========FOOTER END========= */
+    /* ============================*/
+
     /* ============================ */
+    /* ========PROGRESS BAR======== */
+    /* ============================*/
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(transparent, var(--primary));
+        border-radius: 6px;
+    }
     /* ============================ */
+    /* ======PROGRESS BAR END====== */
     /* ============================*/
 
 /* ============================ */
@@ -447,6 +509,26 @@ html {
     min-height: 100vh;
     display: block;
     padding: 0 30px;
+    position: fixed;
+    left: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.back-section {
+    z-index: 1;
+}
+
+.active {
+    opacity: 1;
+    z-index: 2;
+    animation: slideSection 1s ease;
 }
 
 .container {
@@ -467,8 +549,11 @@ html {
     /* ============================ */
     /* ============================ */
     .home {
+        /* position: static; */
         min-height: 100vh;
         display: flex;
+        overflow-y: hidden;
+        z-index: 11;
     }
     .home .container {
         width: 1100px;
@@ -482,7 +567,7 @@ html {
         .break-top {
             position: absolute;
             top:1.5rem;
-            left: 300px;
+            left: 1.5rem;
             height: 1px;
             width: 10rem;
             background: var(--primary);
@@ -493,8 +578,8 @@ html {
         
         .break-top1 {
             position: absolute;
-            top:2.5rem;
-            left: 300px;
+            top: 2.5rem;
+            left: 1.5rem;
             height: 1px;
             width: 6rem;
             background: var(--primary);
@@ -505,8 +590,8 @@ html {
         
         .break-top2 {
             position: absolute;
-            top:3.5rem;
-            left: 300px;
+            top: 3.5rem;
+            left: 1.5rem;
             height: 1px;
             width: 2.5rem;
             background: var(--primary);
@@ -761,7 +846,7 @@ html {
 
     .about-body {
         padding: 10px;
-        margin: 7.5rem 0;
+        margin: 7.5rem 0 1.5rem 0;
     }
     
     .about-body header {
@@ -857,7 +942,6 @@ html {
     /* ============================ */
     .projects {
         background: var(--container);
-        position: relative;
         min-height: 100vh;
         color: var(--light);
         display: flex;
@@ -1036,11 +1120,11 @@ html {
     /* ============================ */
     /* ============================ */
     .contact {
-        position: relative;
         color: var(--light);
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 10;
     }
     
     .contact .container {
@@ -1321,10 +1405,6 @@ html {
     /* ============================ */
     @media (max-width: 1250px) {
 
-        .home .container {
-            padding: 70px 100px 70px 90px;
-        }
-
         .home h1 {
             font-size: 5rem;
         }
@@ -1340,6 +1420,19 @@ html {
     @media (max-width: 1150px) {
         .navbar {
             left: -270px;
+        }
+
+        .nav-toggler {
+            display: flex;
+        }
+        
+        .section {
+            left: 0;
+        }
+
+        .navbar-active {
+            left: 0;
+            width: 100vw;
         }
 
         .main-content {
@@ -1456,8 +1549,8 @@ html {
             font-size: 4rem;
         }
 
-        .home .container {
-            padding: 70px 0px 70px 50px;
+        .home p {
+            font-size: 1rem;
         }
     }
 
@@ -1465,9 +1558,13 @@ html {
     /* ============754px=========== */
     /* ============================ */
     @media (max-width: 754px) {
+        .home h1 {
+            font-size: 3rem;
+        }
         .about-body .about-description {
             padding: 0 1.5rem;
         }
+
         .about-information {
             padding-left: 0;
         }
@@ -1509,7 +1606,7 @@ html {
     /* ============================ */
     @media (max-width: 580px) {
         .home h1 {
-            font-size: 3.5rem;
+            font-size: 2.75rem;
             line-height: 1.5;
         }
     }
