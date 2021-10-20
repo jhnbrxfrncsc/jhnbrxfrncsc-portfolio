@@ -1,0 +1,1604 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@200;300;400;500;700&display=swap');
+
+:root {
+    /* ===========COLORS=========== */
+    --primary: #6BD2E5;
+    --container: #1A1B1B;
+    --text-gray: #D1CFCF;
+    --bg-input: #272727;
+    --dark: #000000;
+    --light: #FFFFFF;
+
+    /* ===========FONTS============ */
+    --font-1: 'Oswald';
+    --font-2: 'Lato';
+    --font-3: 'Beon';
+
+    /* ========BOX SHADOWS========= */
+    --box-shadow-1: 0px 0px 10px 0px var(--primary);
+    --box-shadow-2: 0px 0px 10px 0px var(--primary);
+
+    /* ========TEXT SHADOWS======== */
+    --txt-shadow: 0 0 10px var(--primary), 0 0 40px var(--primary), 0 0 80px var(--primary); 
+}
+
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ===========KEYFRAMES=========== */
+/* ============================ */
+/* ============================ */
+/* ============================ */
+@keyframes intro-h1 {
+    0%  {
+        left: -200%;
+        color: transparent;
+        z-index: -100;
+        text-shadow: var(--txt-shadow);
+    }
+    50% {
+        left: -50%;
+        color: transparent;
+    }
+    60% {
+        left: 12%;
+        color: transparent;
+    }
+    90% {
+        color: transparent;
+        color: var(--primary);
+    }
+    99% {
+        color: transparent;
+        font-weight: bold;
+    }
+    100%  {
+        color: transparent;
+        left: 0%;
+    }
+}
+
+@keyframes intro-p {
+    0%  {
+        position: absolute;
+        color: transparent;
+        bottom: -50%;
+        z-index: -100;
+    }
+    40% {
+        bottom: -20%;
+        position: absolute;
+        color: transparent;
+        z-index: -100;
+    }
+    
+    80% {
+        position: absolute;
+        bottom: -20%;
+        z-index: -100;
+    }
+
+    95% {
+        position: absolute;
+        bottom: 25%;
+        z-index: -100;
+    }
+
+    96% {
+        position: absolute;
+        bottom: 16%;
+        z-index: -100;
+    }
+    97% {
+        position: absolute;
+        bottom: 17%;
+        z-index: -100;
+        text-shadow: var(--txt-shadow);
+    }
+    98% {
+        position: absolute;
+        bottom: 18%;
+        z-index: -100;
+        text-shadow: var(--txt-shadow);
+    }
+
+    99% {
+        position: absolute;
+        bottom: 19%;
+        z-index: -100;
+        text-shadow: var(--txt-shadow);
+    }
+    
+    100% {
+        color: transparent;
+        font-size: 2rem;
+        bottom: 20%;
+        z-index: -100;
+    }
+}
+
+@keyframes intro-btn {
+    0%  {
+        bottom: -100%;
+        color: transparent;
+        border:none;
+        z-index: -100;
+    }
+    50% {
+        bottom: -50%;
+        color: transparent;
+        border:none;
+        z-index: -100;
+    }
+    90% {
+        bottom: -10%;
+        color: transparent;
+        border:none;
+        z-index: -100;
+    }
+    99% {
+        bottom: 10%;
+        color: transparent;
+        border:none;
+        z-index: -100;
+    }
+    100%  {
+        bottom: 0%;
+        border:none;
+        z-index: -100;
+    }
+}
+
+@keyframes intro-breaks {
+    0%  {
+        width: 0;
+        box-shadow: 0px 0px 10px 0px var(--primary);
+    }
+    80% {
+        box-shadow: 0px 0px 20px 3px var(--primary);
+    }
+    90% {
+        box-shadow: 0px 0px 10px 5.5px var(--primary);
+    }
+    100% {
+        box-shadow: 0px 0px 10px 6px var(--primary);
+    }
+} 
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* =======KEYFRAMES END======== */
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* about
+    width: 50%;
+    margin: 1rem auto;
+*/
+
+/* ============================ */
+/* =======GENERAL STYLES======= */
+/* ============================ */
+.hidden {
+    display: none!important;
+}
+
+.btn { 
+    display: block;
+    position: relative;
+    padding: 10px 20px;
+    text-align: center;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1.75px;
+    font-size: 16px;
+    font-weight: 700;
+    overflow: hidden;
+    transition: 0.2s;
+    text-decoration: none;
+    font-family: var(--font-1);
+    border: 1px solid var(--primary);
+}
+
+.btn {
+    margin-top: 1rem;
+    animation: intro-btn 10.85s linear;
+    font-family: var(--font-1);
+}
+
+.btn:hover {
+    color: var(--container);
+    background: var(--primary);
+    border: none;
+    box-shadow: 0 0 10px var(--primary), 
+                0 0 40px var(--primary), 
+                0 0 80px var(--primary);
+    transition-delay: 1s;
+}
+
+.btn span {
+    position: absolute;
+    display: block;
+}
+
+.btn span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary));
+}
+
+.btn:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+}
+
+.btn span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--primary));
+}
+
+.btn:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.btn span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--primary));
+}
+
+.btn:hover span:nth-child(3) {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.btn span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--primary));
+}
+
+.btn:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+/* ============================ */
+/* =====GENERAL STYLES END===== */
+/* ============================ */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ===========NAVBAR=========== */
+/* ============================ */
+/* ============================ */
+/* ============================*/
+.navbar {
+    position: fixed;
+    background-color: var(--dark);
+    color: var(--light);
+    width: 270px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* ===========LOGO============= */
+    /* ============================ */
+    /* ============================ */
+    /* ============================*/
+    .logo {
+        background-color: var(--dark);
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .logo img {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .logo h3 {
+        font-family: var(--font-3);
+        color: var(--light);
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: .25rem;
+    }
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* ==========LOGO END========== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================*/
+
+
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* =========NAV-LINKS========== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================*/
+    .nav-links {
+        margin: 80px 0;
+        list-style: none;
+        padding: 0;
+    }
+    
+    .nav-link a {
+        text-decoration: none;
+        display: block;
+        color: var(--light);
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 45px;
+        text-align: center;
+        padding: 5px 0;
+        margin: 16px 0;
+        border-bottom: 1.5px solid var(--container);
+    }
+    
+    .nav-link a:hover {
+        font-weight: 600;
+        color: var(--primary);
+        transition: .35s all ease-in-out;
+        text-shadow: 0 0 10px var(--primary), 
+                    0 0 40px var(--primary), 
+                    0 0 80px var(--primary);
+    }
+    
+    .nav-link:nth-child(2) a .fas,
+    .nav-link:nth-child(3) a .fas {
+        margin-right: 2px;
+    }
+    .nav-link:nth-child(4) a .fas{
+        margin-right: 1.75px;
+    }
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* =======NAV-LINKS END======== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================*/
+    
+
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* ===========FOOTER=========== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================*/
+    footer {
+        height: 2rem;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    
+    footer a i{
+        color: var(--light);
+        font-size: 1.5rem;
+    }
+    
+    footer a:hover i{
+        color: var(--primary);
+        transition: .5s color ease-in-out;
+        text-shadow: 0 0 10px var(--primary), 
+                    0 0 40px var(--primary), 
+                    0 0 80px var(--primary);
+    }
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* =========FOOTER END========= */
+    /* ============================ */
+    /* ============================ */
+    /* ============================*/
+
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ========MAIN CONTENT======== */
+/* ============================ */
+/* ============================ */
+/* ============================*/
+.main-content {
+    padding-left: 270px;
+    overflow: hidden;
+}
+
+.section {
+    background-color: var(--container);
+    color: var(--light);
+    min-height: 100vh;
+    display: block;
+    padding: 0 30px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section .container {
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* =======HOME CONTENT======== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    .home {
+        min-height: 100vh;
+        display: flex;
+    }
+    .home .container {
+        width: 1100px;
+        padding-left: 2rem;
+        padding-right: 2.5rem;
+    }
+
+        /* ============================ */
+        /* ===========BREAKS=========== */
+        /* ============================ */
+        .break-top {
+            position: absolute;
+            top:1.5rem;
+            left: 300px;
+            height: 1px;
+            width: 10rem;
+            background: var(--primary);
+            animation: intro-breaks 1.5s linear;
+            box-shadow: 0px 0px 10px 2px var(--primary);
+            transition: 0.5s ease-out;
+        }
+        
+        .break-top1 {
+            position: absolute;
+            top:2.5rem;
+            left: 300px;
+            height: 1px;
+            width: 6rem;
+            background: var(--primary);
+            animation: intro-breaks 1.50s linear;
+            box-shadow: 0px 0px 10px 2px var(--primary);
+            transition: 0.5s ease-out;
+        }
+        
+        .break-top2 {
+            position: absolute;
+            top:3.5rem;
+            left: 300px;
+            height: 1px;
+            width: 2.5rem;
+            background: var(--primary);
+            animation: intro-breaks 1.50s linear;
+            box-shadow: 0px 0px 10px 2px var(--primary);
+            transition: 0.5s ease-out;
+        }
+        
+        .break-bot {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            height: 1px;
+            width: 10rem;
+            background: var(--primary);
+            animation: intro-breaks 1.5s linear;
+            box-shadow: 0px 0px 10px 2px var(--primary);
+            transition: 0.5s ease-out;
+        }
+        
+        .break-bot1 {
+            position: absolute;
+            bottom: 2.5rem;
+            right: 1.5rem;
+            height: 1px;
+            width: 6rem;
+            background: var(--primary);
+            animation: intro-breaks 1.5s linear;
+            box-shadow: 0px 0px 10px 2px var(--primary);
+            transition: 0.5s ease-out;
+        }
+        
+        .break-bot2 {
+            position: absolute;
+            bottom: 3.5rem;
+            right: 1.5rem;
+            height: 1px;
+            width: 2.5rem;
+            background: var(--primary);
+            animation: intro-breaks 1.5s linear;
+            box-shadow: 0px 0px 10px 2px var(--primary);
+            transition: 0.5s ease-out;
+        }
+
+        /* ============================ */
+        /* =========BREAKS END========= */
+        /* ============================ */
+    
+    .home h1 {
+        position: relative;
+        font-weight: 400;
+        font-size: 6rem;
+        line-height: 7.5rem;
+        font-family: var(--font-1);
+    }
+
+    .blast {
+        position: relative;
+        display: inline-block;
+        transition: 1.3s ease-out;
+        animation: intro-h1;
+        animation-iteration-count: 1;
+    }
+
+    .blast:hover {
+        animation: rotate-text 1.5s linear;
+        position: relative;
+        color: var(--primary);
+        transition: .3s ease-out;
+        padding: 1rem;
+        text-shadow: 0 0 10px var(--primary), 
+                    0 0 40px var(--primary), 
+                    0 0 80px var(--primary);
+    }
+
+    .blast:nth-child(1) {
+        animation: intro-h1 3.5s linear;
+    }
+    .blast:nth-child(2) {
+        animation: intro-h1 4s linear;
+    }
+    .blast:nth-child(3) {
+        animation: intro-h1 4.5s linear;
+    }
+    .blast:nth-child(5) {
+        animation: intro-h1 4.8s linear;
+    }
+    .blast:nth-child(6) {
+        animation: intro-h1 5.1s linear;
+    }
+    .blast:nth-child(7) {
+        animation: intro-h1 5.4s linear;
+    }
+    .blast:nth-child(8) {
+        animation: intro-h1 5.7s linear;
+    }
+    .blast:nth-child(9) {
+        animation: intro-h1 5.9s linear;
+    }
+    .blast:nth-child(10) {
+        animation: intro-h1 6.1s linear;
+    }
+    .blast:nth-child(11) {
+        animation: intro-h1 6.4s linear;
+    }
+    .blast:nth-child(12) {
+        animation: intro-h1 6.8s linear;
+    }
+    .blast:nth-child(14) {
+        animation: intro-h1 6.5s linear;
+    }
+    .blast:nth-child(15) {
+        animation: intro-h1 7s linear;
+    }
+    .blast:nth-child(16) {
+        animation: intro-h1 7.5s linear;
+    }
+    .blast:nth-child(17) {
+        animation: intro-h1 8s linear;
+    }
+    .blast:nth-child(18) {
+        animation: intro-h1 8.5s linear;
+    }
+    .blast:nth-child(19) {
+        animation: intro-h1 9s linear;
+    }
+    .blast:nth-child(20) {
+        animation: intro-h1 9.5s linear;
+    }
+    .blast:nth-child(21) {
+        animation: intro-h1 10s linear;
+    }
+    .blast:nth-child(22) {
+        animation: intro-h1 10.5s linear;
+    }
+    .blast:nth-child(23) {
+        animation: intro-h1 11s linear;
+    }
+    .blast:nth-child(24) {
+        animation: intro-h1 11.5s linear;
+    }
+    .blast:nth-child(25) {
+        animation: intro-h1 12s linear;
+    }
+    .blast:nth-child(26) {
+        animation: intro-h1 12s linear;
+    }
+
+    .home p {
+        font-family: var(--font-2);
+        color: var(--text-gray);
+        padding: 1rem 1rem 1rem 5px;
+        animation: intro-p 10.5s linear;
+        transition: all .3s ease-in-out;
+        font-size: 1.2rem;
+    }
+
+    .home p:hover {
+        color: lighten(var(--text-gray));
+        transition: all .3s ease-out;
+        text-shadow: 0 0 10px var(--primary), 0 0 40px var(--primary), 0 0 80px var(--primary);
+    }
+
+    .home .container .btn {
+        margin-top: 1rem;
+        animation: intro-btn 10.85s linear;
+        font-family: var(--font-1);
+        width: 20%;
+        margin: 1rem auto 0 auto;
+    }
+
+    .home .container .btn {
+        margin-top: 1.5rem;
+    }
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* ======HOME CONTENT END====== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* =======ABOUT CONTENT-====== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    .about {
+        background: var(--container);
+        color: var(--light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .about .container {
+        position: relative;
+        background:var(--container);
+        z-index: 10;
+    }
+
+    .about-header {
+        position: relative;
+        text-align: center;
+    }
+    
+    .about-header h1 {
+        position: absolute;
+        left: calc(50% - 270px);
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        font-size: 3.25em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: var(--font-1);
+        text-shadow: 0 0 20px var(--primary);
+    }
+    
+    .about-header h1::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0%;
+        left: calc(50% - 270px);
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        z-index: -1;
+        color: var(--primary);
+        filter: blur(15px);
+    }
+    
+    .about-header h1::before {
+        content: '';
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        z-index: -2;
+        background-color: var(--primary);
+        opacity: .5;
+        filter: blur(50px);
+    }
+    
+    .about-header h1 span:nth-child(1) {
+        color: var(--primary);
+    }
+
+    .about-body {
+        padding: 10px;
+        margin: 7.5rem 0;
+    }
+    
+    .about-body header {
+        text-align: center;
+        padding: 0px 16px;
+        margin: 0 0 24px;
+    }
+    
+    .about-body .about-subtitle {
+        font-size: 2rem;
+        font-family: var(--font-1);
+        margin: 10px 0px;
+    }
+    
+    .about-body .about-subtitle span {
+        color: var(--primary);
+    }
+    
+    .about-body .about-description {
+        font-family: var(--font-2);
+        font-size: 1.1em;
+        padding: 0 4.5rem;
+    }
+    
+    .about-information {
+        position: relative;
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 1.5rem;
+        padding: 0 1rem;
+        margin: auto;
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-information .info-cell {
+        width: 40%;
+        padding: 1rem;
+        position: relative;
+    }
+    
+    .info-cell {
+        font-family: var(--font-2);
+        font-size: 1.2rem;
+    }
+    
+    .about-information .info-cell span:nth-child(1) {
+        color: var(--primary);
+        font-family: var(--font-1);
+        text-transform: uppercase;
+    }
+    
+    .about-information .info-cell:nth-child(6) {
+        color: rgb(105, 212, 105);
+        font-family: var(--font-1);
+    }
+    
+    .about-information .info-cell:nth-child(all) {
+        border: 2px solid red;
+    }
+    
+    .about-information .info-cell span:nth-child(2) {
+        width: 90%;
+        height: 2px;
+        background: var(--primary);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .about-body .btn {
+        animation: none;
+        width: 80%;
+        margin: auto;
+        margin-top: 1.75rem;
+    }
+    
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* =====ABOUT CONTENT END====== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* ======PROJECTS CONTENT====== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    .projects {
+        background: var(--container);
+        position: relative;
+        min-height: 100vh;
+        color: var(--light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .projects .container {
+        position: relative;
+        background:var(--container);
+        z-index: 10;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    .projects-header {
+        text-align: center;
+    }
+    
+    .projects-header h1 {
+        position: absolute;
+        left: calc(50% - 270px);
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        font-size: 3.25em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: var(--font-1);
+        text-shadow: 0 0 20px var(--primary);
+    }
+    
+    .projects-header h1::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0%;
+        left: calc(50% - 270px);
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        z-index: -1;
+        color: var(--primary);
+        filter: blur(15px);
+    }
+    
+    .projects-header h1::before {
+        content: '';
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        z-index: -2;
+        background-color: var(--primary);
+        opacity: .5;
+        filter: blur(50px);
+    }
+    
+    .projects-header h1 span {
+        color: var(--primary);
+    }
+    
+    .projects-body {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 10px;
+        text-align: center;
+        margin: 7rem 0;
+    }
+    
+    .card {
+        position: relative;
+        width: 400px;
+        height: 300px;
+        transform-style: preserve-3d;
+        perspective: 600px;
+        transition: 0.5s;
+        margin: 1.5rem;
+    }
+    
+    .card .front img {
+        height: 300px;
+        width: 400px;
+        /* RGB (107, 210, 229)  */
+        /* RGB (26, 27, 27)  */
+        opacity: .75;
+    }
+    
+    .card .front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        backface-visibility: hidden;
+        transform: rotateX(0deg);
+        transition: 0.5s;
+    }
+    
+    .card:hover .front {
+        transform: rotateX(-180deg);
+    }
+    
+    .card .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--container);
+        backface-visibility: hidden;
+        transform: rotateX(180deg);
+        transition: .5s ease-in-out;
+        box-shadow: 0 0 10px var(--primary), 
+        0 0 40px var(--primary), 
+        0 0 80px var(--primary);
+    }
+    
+    .card:hover .back {
+        transform: rotateX(0deg);
+    }
+    
+    .card .back .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.6rem;
+        height: 100%;
+        z-index: 20;
+    }
+    
+    .card .back .details h2 {
+        margin-top: 1rem;
+        font-size: 2em;
+    }
+    
+    .card .back .details p {
+        color: var(--text-gray);
+    }
+    
+    .card .back .details .social-icon {
+        margin-top: 1rem;
+        font-size: 2em;
+    }
+    
+    .card .back .details .social-icon a i {
+        color: var(--light);
+    }
+    
+    .card .back .details .social-icon a:hover i {
+        color: var(--primary);
+        transition: 1s;
+        text-shadow: 0 0 10px var(--primary), 
+                    0 0 40px var(--primary), 
+                    0 0 80px var(--primary);
+    }
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* ===PROJECTS CONTENT END==== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* ==========CONTACT=========== */
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    .contact {
+        position: relative;
+        color: var(--light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contact .container {
+        width: 100%;
+        max-width: 1200px;
+        padding: 2rem;
+
+        position: relative;
+        z-index: 10;
+    }
+    .contact-header {
+        text-align: center;
+    }
+    
+    .contact-header h1 {
+        position: absolute;
+        left: calc(50% - 270px);
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        font-size: 3.25em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: var(--font-1);
+        text-shadow: 0 0 20px var(--primary);
+    }
+    
+    .contact-header h1::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0%;
+        left: calc(50% - 270px);
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        z-index: -1;
+        color: var(--primary);
+        filter: blur(15px);
+    }
+    
+    .contact-header h1::before {
+        content: '';
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        z-index: -2;
+        background-color: var(--primary);
+        opacity: .5;
+        filter: blur(50px);
+    }
+    
+    .contact-header h1 span {
+        color: var(--primary);
+    
+    }
+    
+    /* Form */
+    .contact .container form {
+        margin-top: 7rem;
+    }
+    .contact .container form .row{
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .contact .container form .row .col {
+        position: relative;
+        width: 100%;
+        padding: 0 10px;
+        margin: 30px 10px;
+        transition: 0.5s;
+    }
+    
+    form .row .form-control {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        color: var(--text-gray);
+    }
+    
+    form .row .form-control input,
+    form .row .textarea textarea {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        padding: 0 10px;
+        z-index: 1;
+        color: var(--light);
+    }
+    
+    form .row .col .form-control label .text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 40px;
+        font-size: 18px;
+        padding: 0 10px;
+        display: block;
+        transition: 0.5s;
+        pointer-events: none;
+    }
+    
+    form .row .form-control input:focus + label .text, 
+    form .row .form-control input:valid + label .text,
+    form .row .form-control textarea:focus + label .text, 
+    form .row .form-control textarea:valid + label .text
+    {
+        top: -45px;
+        left: -10px;
+        color: var(--primary);
+    }
+    
+    form .row .form-control .line {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 90%;
+        height: 2px;
+        background: var(--primary);
+        transition: 0.5s;
+        border-radius: 5px;
+        pointer-events: none;
+        box-shadow: 0 0 50px var(--primary);
+    } 
+
+    form .row .textarea .line {
+        width: 95%;
+    } 
+    
+    form .row .form-control input:focus ~ .line,
+    form .row .form-control input:valid ~ .line,
+    form .row .form-control textarea:focus ~ .line, 
+    form .row .form-control textarea:valid ~ .line {
+        height: 100%;
+        background: var(--bg-input);
+        box-shadow: 0 0 10px var(--primary);
+    }
+    
+    form .row .form-control .textarea {
+        position: relative;
+        width: 100%;
+        padding: 10px 0;
+        height: 200px;
+    }
+    
+    textarea {
+        resize: none;
+    }
+    
+    .contact-btn {
+        display: block;
+        position: relative;
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 10px 20px;
+        color: var(--primary);
+        background: var(--container);
+        text-transform: uppercase;
+        cursor: pointer;
+        letter-spacing: 1.75px;
+        font-size: 16px;
+        font-weight: 700;
+        overflow: hidden;
+        transition: 0.2s;
+        text-decoration: none;
+        font-family: var(--font-1);
+        border: 1px solid var(--primary);
+    }
+    
+    .contact-btn:hover {
+        color: var(--container);
+        background: var(--primary);
+        border: none;
+        box-shadow: 0 0 10px var(--primary), 
+                    0 0 40px var(--primary), 
+                    0 0 80px var(--primary);
+        transition-delay: 1s;
+    }
+    
+    .contact-btn span {
+        position: absolute;
+        display: block;
+    }
+    
+    .contact-btn span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary));
+    }
+    
+    .contact-btn:hover span:nth-child(1) {
+        left: 100%;
+        transition: 1s;
+    }
+    
+    .contact-btn span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, var(--primary));
+    }
+    
+    .contact-btn:hover span:nth-child(2) {
+        top: 100%;
+        transition: 1s;
+        transition-delay: 0.25s;
+    }
+    
+    .contact-btn span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, var(--primary));
+    }
+    
+    .contact-btn:hover span:nth-child(3) {
+        right: 100%;
+        transition: 1s;
+        transition-delay: 0.5s;
+    }
+    
+    .contact-btn span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, var(--primary));
+    }
+    
+    .contact-btn:hover span:nth-child(4) {
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: 0.75s;
+    }
+
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    /* ========CONTACT END========= */
+    /* ============================ */
+    /* ============================ */
+    /* ============================ */
+    
+    
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ======MAIN CONTENT END====== */
+/* ============================ */
+/* ============================ */
+/* ============================ */
+
+
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* =========BREAKPOINTS======== */
+/* ============================ */
+/* ============================ */
+/* ============================ */
+
+    /* ============================ */
+    /* ===========1250px========== */
+    /* ============================ */
+    @media (max-width: 1250px) {
+
+        .home .container {
+            padding: 70px 100px 70px 90px;
+        }
+
+        .home h1 {
+            font-size: 5rem;
+        }
+
+        .home p {
+            font-size: 1rem;
+        }
+    }
+
+    /* ============================ */
+    /* ===========1150px========== */
+    /* ============================ */
+    @media (max-width: 1150px) {
+        .navbar {
+            left: -270px;
+        }
+
+        .main-content {
+            padding-left: 0;
+        }
+
+        .break-top,
+        .break-top1,
+        .break-top2 {
+            top: unset;
+            bottom: 1.5rem;
+            left: 1.5rem;
+        }
+
+        .break-top {
+            bottom: 1.5rem;
+        }
+        .break-top1 {
+            bottom: 2.5rem;
+        }
+        .break-top2 {
+            bottom: 3.5rem;
+        }
+
+        .break-bot,
+        .break-bot1,
+        .break-bot2 {
+            top: 1.5rem;
+            bottom: unset;
+            right: 1.5rem;
+        }
+
+        .break-bot {
+            top: 1.5rem;
+        }
+        .break-bot1 {
+            top: 2.5rem;
+        }
+        .break-bot2 {
+            top: 3.5rem;
+        }
+
+        .home .container {
+            padding-left: 100px;
+        }
+
+        .home h1 {
+            font-size: 5.5rem;
+            line-height: 1.5;
+        }
+
+        .home p {
+            font-size: 1.5rem;
+        }
+    }
+    /* ============================ */
+    /* ============990px========== */
+    /* ============================ */
+    @media (max-width: 990px) {
+        .home .container {
+            padding: 70px 100px 70px 90px;
+        }
+
+        .home h1 {
+            font-size: 5rem;
+        }
+
+        .card,
+        .card .back,
+        .card .front img {
+            height: 200px;
+            width: 300px;
+        }
+        .info-cell {
+            font-size: 1rem;
+        }
+    }
+
+    /* ============================ */
+    /* ===========870px=========== */
+    /* ============================ */
+    @media (max-width: 870px) {
+        .home h1 {
+            font-size: 4.5rem;
+            text-align: center;
+        }
+
+        .home p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .about-body .about-description {
+            padding-left: 0 2rem;
+        }
+
+        .about-information .info-cell {
+            width: 45%;
+        }
+
+        .card,
+        .card .back,
+        .card .front img {
+            height: 250px;
+            width: 500px;
+        }
+    }
+
+    /* ============================ */
+    /* ===========822px============ */
+    /* ============================ */
+    @media (max-width: 822px) {
+        .home h1 {
+            font-size: 4rem;
+        }
+
+        .home .container {
+            padding: 70px 0px 70px 50px;
+        }
+    }
+
+    /* ============================ */
+    /* ============754px=========== */
+    /* ============================ */
+    @media (max-width: 754px) {
+        .about-body .about-description {
+            padding: 0 1.5rem;
+        }
+        .about-information {
+            padding-left: 0;
+        }
+
+        .about-information .info-cell {
+            width: 40%;
+        }
+        
+        form .row .textarea .line {
+            width: 90%;
+        }
+    }
+
+    /* ============================ */
+    /* ============620px========== */
+    /* ============================ */
+    @media (max-width: 620px) {
+        .home .container {
+            padding: 0;
+            text-align: center;
+        }
+
+        .home .container .btn {
+            width: 50%;
+            margin: auto;
+            margin-top: 1.2rem;
+        }
+
+        .card,
+        .card .back,
+        .card .front img {
+            height: 200px;
+            width: 350px;
+        }
+    }
+
+    /* ============================ */
+    /* ============580px========== */
+    /* ============================ */
+    @media (max-width: 580px) {
+        .home h1 {
+            font-size: 3.5rem;
+            line-height: 1.5;
+        }
+    }
+
+
+    /* ============================ */
+    /* ============450px========== */
+    /* ============================ */
+    @media (max-width: 470px) {
+        .home .container {
+            text-align: center;
+        }
+
+        .home h1 {
+            font-size: 2.3rem;
+            line-height: 1.5;
+        }
+
+        .home p {
+            font-size: .8rem;
+        }
+
+        .home .container .btn {
+            width: 50%;
+            font-size: .85rem;
+            margin-top: .5rem;
+            height: 20%;
+            padding: 9px 12px;
+        }
+
+        .about .container {
+            padding-bottom: 0;
+        }
+
+        .about-header h1 {
+            font-size: 2.75em;
+        }
+
+        .about-body .about-subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+
+        .about-body .about-description {
+            padding: 0;
+            font-size: .9em;
+            line-height: 1.3;
+        }
+
+        .about-information {
+            padding: 0;
+        }
+
+        .about-information .info-cell {
+            width: 100%;
+            padding-bottom: .7rem;
+            font-size: .6em;
+            margin: .5rem 0;
+        }
+
+        .about-body .btn {
+            margin: 0;
+            width: 75%;
+        }
+
+        .projects-header h1 {
+            font-size: 2.75em;
+        }
+
+        .card,
+        .card .back,
+        .card .front img {
+            height: 150px;
+            width: 250px;
+        }
+        form .row .textarea .line,
+        form .row .form-control .line {
+            width: 85%;
+        }
+
+        .contact-header h1 {
+            font-size: 2.75em;
+        }
+    }
+
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ======BREAKPOINTS END======= */
+/* ============================ */
+/* ============================ */
+/* ============================ */

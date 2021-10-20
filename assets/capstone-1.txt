@@ -1,0 +1,40 @@
+minimum requirements:
+Navbar
+Landing page
+about me
+projects
+contact
+footer
+
+images
+github -> https://caferati.me/images/github.svg
+
+Color Palette:
+primary: #6BD2E5
+accent: #6BD2E5
+container: #1A1B1B
+dark: #000000
+light: #FFFFFF
+
+fonts: 
+Oswald, Lato & Beon (logo)
+
+Navbar-> Home - About Me - Projects - Contact Me
+-> left: 0; width: 13rem; height: 100vh;
+
+Banner -> Picture - Name, Full-stack Web Developer - DL CV
+
+About Me -> 
+I am an eager, extremely resourceful and self-taught web programmer 
+with the enthusiasm and ambition to carry out projects to completion. 
+Broad knowledge of web application development utilizing HTML, CSS,
+JavaScript and React. Passionate about creating applications that 
+can improve people’s lives. I enjoy every step of the design process, 
+discussion and collaboration.
+DL CV - degree, city, website, email, phone, freelance: available
+
+
+Projects -> Title, Links, Technology Used & Description
+contact -> form
+footer -> socials 
+
