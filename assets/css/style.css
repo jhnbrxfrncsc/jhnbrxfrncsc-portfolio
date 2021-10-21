@@ -1086,10 +1086,12 @@ body {
     .card .back .details .social-icon {
         margin-top: 1rem;
         font-size: 2em;
+        display: flex;
     }
     
     .card .back .details .social-icon a i {
         color: var(--light);
+        margin: 0 10px;
     }
     
     .card .back .details .social-icon a:hover i {
