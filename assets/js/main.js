@@ -14,6 +14,8 @@ const contactSection = document.querySelector('.contact');
 const navToggler = document.querySelector('.nav-toggler');
 const togglerIcon = document.querySelector('i');
 
+const homeBtn = document.getElementById('home-btn');
+
 
 if(this.window.innerWidth < 1150) {
     navbar.classList.remove('navbar-active');
@@ -35,6 +37,28 @@ navToggler.addEventListener("click", () => {
         togglerIcon.classList.add('fa-bars');
         togglerIcon.classList.remove('fa-times');
     }
+});
+
+homeBtn.addEventListener("click", () => {
+    // remove active class
+    homeLink.classList.remove('nav-link-active');
+    aboutLink.classList.remove('nav-link-active');
+    contactLink.classList.remove('nav-link-active');
+
+    // add active class
+    projectsLink.classList.add('nav-link-active');
+
+    // hiding sections
+    projectsSection.classList.remove('hidden');
+    homeSection.classList.add('hidden');
+    aboutSection.classList.add('hidden');
+    contactSection.classList.add('hidden');
+    
+    // animation
+    projectsSection.classList.add('active');
+    homeSection.classList.remove('active');
+    aboutSection.classList.remove('active');
+    contactSection.classList.remove('active');
 });
 
 homeLink.addEventListener("click", () => {
