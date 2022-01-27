@@ -793,7 +793,7 @@ body {
         z-index: 10;
     }
 
-    .about-header {
+    .about-header, .certificate {
         position: relative;
         text-align: center;
     }
@@ -809,8 +809,20 @@ body {
         font-family: var(--font-1);
         text-shadow: 0 0 20px var(--primary);
     }
+    .certificate h1 {
+        position: absolute;
+        top: 25px;
+        left: calc(50% - 270px);
+        right: calc(50% - 270px);
+        transform: translateY(-50%, -50%);
+        font-size: 3.25em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: var(--font-1);
+        text-shadow: 0 0 20px var(--primary);
+    }
     
-    .about-header h1::after {
+    .about-header h1::after, .certificate h1::after {
         content: attr(data-text);
         position: absolute;
         top: 0%;
@@ -822,7 +834,7 @@ body {
         filter: blur(15px);
     }
     
-    .about-header h1::before {
+    .about-header h1::before, .certificate h1::before {
         content: '';
         position: absolute;
         top: 0%;
@@ -897,7 +909,6 @@ body {
     }
     
     .about-information .info-cell:nth-child(6) {
-        color: rgb(105, 212, 105);
         font-family: var(--font-1);
     }
     
@@ -1051,6 +1062,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
+        padding: 10px;
         background: var(--container);
         backface-visibility: hidden;
         transform: rotateX(180deg);
@@ -1653,6 +1665,10 @@ body {
 
         .about-header h1 {
             font-size: 2.75em;
+        }
+
+        .certificate {
+            margin-top: 15rem;
         }
 
         .about-body .about-subtitle {
