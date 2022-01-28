@@ -15,6 +15,7 @@ const navToggler = document.querySelector('.nav-toggler');
 const togglerIcon = document.querySelector('i');
 
 const homeBtn = document.getElementById('home-btn');
+const contactBtn = document.getElementById('contact-btn');
 
 
 if(this.window.innerWidth < 1150) {
@@ -197,3 +198,7 @@ contactLink.addEventListener("click", () => {
     togglerIcon.classList.remove('fa-times');
 });
 
+
+contactBtn.addEventListener("click", () => {
+    alert("Contact Form is not yet functional. Please contact my mobile number: 09090843080")
+})
